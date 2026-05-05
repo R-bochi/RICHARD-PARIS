@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Portfolio</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #e6f2f2;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #0f9b8e, #1e3c72);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header p {
+    margin: 3px;
+}
+
+/* ICONS */
+header img {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+header img:hover {
+    transform: scale(1.2);
+}
+
+/* LAYOUT */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+section { margin-bottom: 30px; }
+
+h2 { color: #0f4c5c; }
+
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* MODULES */
+.modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.module-card {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.module-card h3 {
+    font-size: 15px;
+    color: #0f4c5c;
+}
+
+/* IMAGES */
+.module-card img,
+.process-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* PROCESS */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 999;
+}
+
+.lightbox-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img {
+    max-width: 95vw;
+    max-height: 90vh;
+    transform-origin: center;
+    transition: transform 0.08s ease;
+    touch-action: none;
+}
+
+/* CLOSE */
+.close {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ZOOM */
+.zoom-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.zoom-controls button {
+    font-size: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER (UPDATED WITH ICONS, NO REMOVAL OF COURSE/SECTION) -->
+<header>
+    <h1>Richard D. Paris Jr.</h1>
+    <p>Visual Arts Portfolio</p>
+    <p>
+        BSIT | BLOCK-D |
+
+        <!-- CONTACT ICONS -->
+        <a href="chaaard123@gmail.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+        </a>
+
+        <a href="https://www.facebook.com/share/1Cv8n9TtyQ/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+        </a>
+
+        <a href="https://www.instagram.com/ri.chaaaard?igsh=MTZhemY4azJ1NDVhZA==" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+        </a>
+    </p>
+</header>
+
+<div class="container">
+
+<!-- TABLE OF CONTENTS -->
+<section>
+<h2>Table of Contents</h2>
+<div class="card">
+<ul>
+<li>Artist Statement</li>
+<li>Module Outputs</li>
+<li>Process Documentation</li>
+</ul>
+</div>
+</section>
+
+<!-- ARTIST STATEMENT -->
+<section>
+<h2>Artist Statement</h2>
+<div class="card">
+<p>
+My artworks are made from different modules where I explored the basics of visual arts. Each activity helped me practice different skills such as drawing, making compositions, taking and editing photos, and creating simple digital designs. Through these tasks, I learned how to express ideas visually instead of just relying on words, and how small details can affect the overall result of an artwork.  
+
+Some of my outputs are based on real-life observation, while others are more creative or abstract depending on the module requirements. I also tried to include Filipino-inspired elements in some of my works to show culture and identity in a simple way. The process documentation shows how I developed my ideas step by step from rough sketches or drafts to the final output.  
+
+Overall, this portfolio shows my progress as a beginner in visual arts. I’m still learning, but each module helped me improve my creativity, patience, and understanding of different styles and techniques.
+</p>
+</div>
+</section>
+
+<!-- MODULES -->
+<section>
+<h2>Module Outputs</h2>
+
+<div class="modules">
+
+<div class="module-card">
+<h3>Module 1: Digital Visual World Collage</h3>
+<img src="mm1.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 2: Observational Drawing</h3>
+<img src="mm2.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 3: Abstract Composition</h3>
+<img src="mm3.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 4: Transformation Series</h3>
+<img src="mm4.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 5: Filipino-Inspired Pattern Design</h3>
+<img src="mm5.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 6–7: Drawing or Painting Artwork</h3>
+<img src="mm6-7.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 8: Digital Poster</h3>
+<img src="mm8.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 9: Photo Narrative Series</h3>
+<img src="mm9.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 10: Infographic</h3>
+<img src="mm10.jpeg" onclick="openLightbox(this)">
+</div>
+
+<div class="module-card">
+<h3>Module 11: Meme Series Creation</h3>
+<img src="mm11.jpeg" onclick="openLightbox(this)">
+</div>
+
+</div>
+</section>
+
+<!-- PROCESS -->
+<section>
+<h2>Process Documentation</h2>
+
+<div class="card">
+<div class="process-grid">
+<img src="d1.jpeg" onclick="openLightbox(this)">
+<img src="d2.jpeg" onclick="openLightbox(this)">
+<img src="d3.jpeg" onclick="openLightbox(this)">
+<img src="d4.jpeg" onclick="openLightbox(this)">
+<img src="d5.jpeg" onclick="openLightbox(this)">
+<img src="d6.jpeg" onclick="openLightbox(this)">
+<img src="d7.jpeg" onclick="openLightbox(this)">
+<img src="d8.jpeg" onclick="openLightbox(this)">
+<img src="d9.jpeg" onclick="openLightbox(this)">
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+<span class="close" onclick="closeLightbox()">&times;</span>
+
+<div class="lightbox-content">
+<img id="lightbox-img">
+</div>
+
+<div class="zoom-controls">
+<button onclick="zoomOut()">−</button>
+<button onclick="zoomIn()">+</button>
+</div>
+</div>
+
+<script>
+let images = [];
+let currentIndex = 0;
+let scale = 1;
+
+const lightbox = document.getElementById("lightbox");
+const img = document.getElementById("lightbox-img");
+
+window.addEventListener("load", () => {
+    images = Array.from(document.querySelectorAll("img[onclick]"));
+});
+
+function openLightbox(el) {
+    currentIndex = images.indexOf(el);
+    lightbox.style.display = "block";
+    img.src = el.src;
+    scale = 1;
+    img.style.transform = "scale(1)";
+}
+
+function closeLightbox() {
+    lightbox.style.display = "none";
+}
+
+function zoomIn() {
+    scale = Math.min(scale + 0.2, 2.5);
+    img.style.transform = `scale(${scale})`;
+}
+
+function zoomOut() {
+    scale = Math.max(scale - 0.2, 1);
+    img.style.transform = `scale(${scale})`;
+}
+
+/* SWIPE */
+let startX = 0;
+
+lightbox.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) next();
+    else if (endX - startX > 50) prev();
+});
+
+function next() {
+    currentIndex = (currentIndex + 1) % images.length;
+    update();
+}
+
+function prev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    update();
+}
+
+function update() {
+    img.src = images[currentIndex].src;
+    scale = 1;
+    img.style.transform = "scale(1)";
+}
+</script>
+
+</body>
+</html>
